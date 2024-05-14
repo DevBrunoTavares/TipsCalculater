@@ -4,21 +4,19 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.tipscaculater.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val btnLimpar: Button =  findViewById(R.id.btn_limpar)
-        val btnCalcular: Button =  findViewById(R.id.btn_calcular)
-        val edtTotal: TextInputEditText = findViewById(R.id.tie_total)
-        val edtPessoas: TextInputEditText = findViewById(R.id.tie_pessoas)
+        binding.btnLimpar.setOnClickListener{
 
-        btnLimpar.setOnClickListener{
-            println("Bruno1 " + edtTotal.text)
-            println("Bruno1 " + edtPessoas.text)
         }
     }
 }
