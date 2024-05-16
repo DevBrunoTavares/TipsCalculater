@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="secundaria">#00494D</color>
+    <color name="tercearia">#26C0AB</color>
+    <color name="branconeve">#F4FAFA</color>
 </resources>
