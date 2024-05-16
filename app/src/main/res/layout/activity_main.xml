@@ -4,15 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:padding="0dp"
+    android:background="@color/white">
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Tips Calculator"
-        android:textSize="32sp"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Conta / Consumação"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -21,11 +27,15 @@
         android:id="@+id/tv_subtitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:textStyle="bold"
         android:layout_margin="16dp"
-        android:text="Preencha os campos abaixo para realizar o calculo da sua conta"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:text="Selecione a Gorjeta / Calculo em %"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+        app:layout_constraintTop_toBottomOf="@+id/til_total" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_total"
@@ -34,16 +44,143 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+        app:layout_constraintTop_toBottomOf="@+id/tv_title">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_total"
+            android:drawableEnd="@drawable/baseline_attach_money_24"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/branconeve"
             android:hint="Digite valor total da conta"
             android:inputType="numberDecimal" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+
+    <RadioGroup
+        android:id="@+id/rg_primeira_coluna"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_subtitle">
+
+        <RadioButton
+            android:id="@+id/rb_opcao_um"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="5%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="28dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+        <RadioButton
+            android:id="@+id/rb_opcao_dois"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="10%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="30dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_segunda_coluna"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_primeira_coluna">
+
+        <RadioButton
+            android:id="@+id/rb_opcao_tres"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="15%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="28dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+        <RadioButton
+            android:id="@+id/rb_opcao_quatro"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="20%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="30dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/rg_terceira_coluna"
+        android:gravity="bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rg_segunda_coluna">
+
+        <RadioButton
+            android:id="@+id/rb_opcao_cinco"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="25%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="28dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+        <RadioButton
+            android:id="@+id/rb_opcao_seis"
+            android:fontFamily="monospace"
+            android:textSize="24dp"
+            android:text="50%"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_selector"
+            android:textColor="@drawable/text_color"
+            android:elevation="4dp"
+            android:layout_marginStart="30dp"
+            android:textAlignment="center"
+            android:layout_width="150dp"
+            android:layout_height="50dp" />
+
+    </RadioGroup>
+
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/til_numero_de_pessoas"
@@ -52,78 +189,94 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/til_total">
+        app:layout_constraintTop_toBottomOf="@+id/rg_terceira_coluna">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/tie_pessoas"
+            android:drawableEnd="@drawable/baseline_people_alt_24"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/branconeve"
             android:hint="Digite o numero de pessoas na mesa"
             android:inputType="number"
             android:maxLength="2" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <RadioGroup
-        android:id="@+id/rg_porcentagem"
+    <TextView
+        android:id="@+id/tv_subtitle2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:layout_margin="24dp"
+        android:text="O total de cada com a gorjeta é : "
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_numero_de_pessoas" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:orientation="horizontal"
-        android:gravity="center_horizontal"
-        app:layout_constraintEnd_toEndOf="@id/til_numero_de_pessoas"
-        app:layout_constraintStart_toStartOf="@id/til_numero_de_pessoas"
-        app:layout_constraintTop_toBottomOf="@+id/til_numero_de_pessoas"
-        app:layout_constraintVertical_bias="0.515">
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tv_subtitle2">
 
-
-        <RadioButton
-            android:id="@+id/opcao_um"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="10%" />
+            android:background="@color/secundaria"
+            android:orientation="vertical"
+            android:padding="32dp">
 
-        <RadioButton
-            android:id="@+id/opcao_dois"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="15%" />
+            <TextView
+                android:id="@+id/tv_resultado"
+                android:fontFamily="monospace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginTop="8dp"
+                android:text="R$ 0,00"
+                android:textSize="32sp" />
 
-        <RadioButton
-            android:id="@+id/opcao_tres"
-            android:text="20%"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    </RadioGroup>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal">
 
+                <Button
+                    android:id="@+id/btn_limpar"
+                    android:fontFamily="monospace"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/tercearia"
+                    android:layout_marginEnd="8dp"
+                    android:layout_weight="1"
+                    android:text="Limpar" />
 
-    <Button
-        android:id="@+id/btn_limpar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="Limpar"
-        app:layout_constraintEnd_toStartOf="@id/vertical_guideline"
-        app:layout_constraintStart_toStartOf="@+id/til_numero_de_pessoas"
-        app:layout_constraintTop_toBottomOf="@id/rg_porcentagem" />
+                <Button
+                    android:id="@+id/btn_calcular"
+                    android:fontFamily="monospace"
+                    android:textSize="16dp"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/tercearia"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="Calcular" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/vertical_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
-
-    <Button
-        android:id="@+id/btn_calcular"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
-        android:text="Calcular"
-        app:layout_constraintEnd_toEndOf="@+id/til_numero_de_pessoas"
-        app:layout_constraintStart_toEndOf="@id/vertical_guideline"
-        app:layout_constraintTop_toBottomOf="@id/rg_porcentagem" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
